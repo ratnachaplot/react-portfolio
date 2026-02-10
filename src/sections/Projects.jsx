@@ -27,7 +27,7 @@ const projectList = [
         title:"Dynamic Portfolio Website | React Project",
         description:"A dynamic and interactive portfolio website developed using React. The project showcases component-based architecture, state management, routing, and integration of various React features to create a modern web application.",
         image: project4 ,
-        link:"https://ratnachaplot.github.io/portfolio-react/"
+        link:"https://reactfolio-personal-portfolio.netlify.app/"
     }
 ];
 
