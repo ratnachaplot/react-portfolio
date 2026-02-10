@@ -90,7 +90,7 @@ Passionate about building innovative solutions and creating seamless user experi
                 <div className="hero-image">
                     <div className="image-wrapper">
                         <div className="image-card">
-                            <img src="/src/assets/images/image.jpg" alt="Ratna Chaplot" />
+                            <img src={image} alt="Ratna Chaplot" />
                         </div>
                         <div className="image-backdrop"></div>
                     </div>
