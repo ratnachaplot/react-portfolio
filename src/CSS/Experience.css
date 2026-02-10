@@ -1,0 +1,348 @@
+/* Experience Section */
+.experience {
+  padding: 100px 20px;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.experience-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-container h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.experience-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Timeline */
+.experience-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Timeline line */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Experience Items */
+.experience-item {
+  position: relative;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.experience-item:nth-child(1) { animation-delay: 0.1s; }
+.experience-item:nth-child(2) { animation-delay: 0.2s; }
+.experience-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Timeline Marker */
+.timeline-marker {
+  position: absolute;
+  left: -29px;
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px #f8f9fa, 0 0 0 6px #667eea30;
+  z-index: 2;
+}
+
+.timeline-icon {
+  font-size: 1.3rem;
+}
+
+/* Experience Content */
+.experience-content {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.experience-item:hover .experience-content {
+  transform: translateX(8px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+/* Experience Header */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.header-main {
+  flex: 1;
+}
+
+.experience-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.experience-content h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #667eea;
+  margin: 0;
+}
+
+.separator {
+  color: #cbd5e1;
+  font-weight: 700;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.location svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+/* Duration Badge */
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%);
+  color: #4b5563;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid #e5e7eb;
+}
+
+.duration svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+/* Description */
+.experience-description {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+}
+
+/* Skills Tags */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea15, #764ba215);
+  color: #667eea;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 30px;
+  }
+
+  .experience-timeline::before {
+    left: 15px;
+  }
+
+  .timeline-marker {
+    left: -24px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .timeline-icon {
+    font-size: 1.1rem;
+  }
+
+  .experience-content {
+    padding: 20px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .experience-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .experience-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .duration {
+    align-self: flex-start;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .experience-description {
+    font-size: 0.95rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Dark Mode */
+.app.dark .experience {
+  background: #0f172a;
+}
+
+.app.dark .experience-container h2 {
+  color: #ffffff;
+}
+
+.app.dark .section-subtitle {
+  color: #94a3b8;
+}
+
+.app.dark .timeline-marker {
+  box-shadow: 0 0 0 4px #0f172a, 0 0 0 6px #667eea30;
+}
+
+.app.dark .experience-content {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.app.dark .experience-item:hover .experience-content {
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.app.dark .experience-content h3 {
+  color: #ffffff;
+}
+
+.app.dark .experience-content h4 {
+  color: #818cf8;
+}
+
+.app.dark .separator {
+  color: #475569;
+}
+
+.app.dark .location {
+  color: #94a3b8;
+}
+
+.app.dark .location svg {
+  color: #818cf8;
+}
+
+.app.dark .duration {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.app.dark .duration svg {
+  color: #818cf8;
+}
+
+.app.dark .experience-description {
+  color: #94a3b8;
+}
+
+.app.dark .skill-tag {
+  background: rgba(129, 140, 248, 0.15);
+  color: #818cf8;
+  border-color: rgba(129, 140, 248, 0.2);
+}
+
+.app.dark .skill-tag:hover {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(129, 140, 248, 0.3);
+}

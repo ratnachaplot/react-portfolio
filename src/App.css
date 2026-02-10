@@ -1,0 +1,86 @@
+/* ---------------------------
+  GLOBAL STYLES
+--------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: #111827;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease;
+}
+
+/* Make sure sections have spacing from navbar */
+section {
+  padding-top: 80px;
+}
+
+/* Links default */
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Buttons default */
+button {
+  font-family: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* ---------------------------
+  DARK MODE
+--------------------------- */
+.app.dark {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+/* Override sections */
+.app.dark section {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+/* Buttons in dark mode */
+.app.dark button {
+  color: #f3f4f6;
+}
+
+/* Links in dark mode */
+.app.dark a {
+  color: #3b82f6;
+}
+
+/* Inputs/Textarea in dark mode */
+.app.dark input,
+.app.dark textarea {
+  background-color: #374151;
+  color: #f3f4f6;
+  border: 1px solid #6b7280;
+}
+
+/* Smooth transition for sections & elements */
+section, button, input, textarea, a {
+  transition: all 0.3s ease;
+}
+
+/* ---------------------------
+  LAYOUT HELPERS
+--------------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Optional: spacing between sections */
+section {
+  margin-bottom: 60px;
+}

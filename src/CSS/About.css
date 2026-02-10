@@ -1,0 +1,38 @@
+.about {
+  padding: 80px 20px;
+  background: #f3f4f6;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.about-container p {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Dark Mode */
+.app.dark .about {
+  background: #1f2937;
+}
+
+.app.dark .about-container h2 {
+  color: #f3f4f6;
+}
+
+.app.dark .about-container p {
+  color: #d1d5db;
+}

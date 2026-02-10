@@ -1,0 +1,43 @@
+.skills {
+  padding: 80px 20px;
+  background: white;
+  text-align: center;
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.skills-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #051539;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Dark Mode */
+.app.dark .skills {
+  background: #1f2937;
+  color: #f3f4f6;
+}
+
+.app.dark .skill {
+  background: #01132f;
+  color: #f3f4f6;
+}
