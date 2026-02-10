@@ -1,4 +1,5 @@
 import "../CSS/Hero.css";
+import image from "../assets/images/image.jpg";
 
 const Hero = () => {
     const scrollToProjects = (e) => {
