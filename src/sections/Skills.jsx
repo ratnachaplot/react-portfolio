@@ -1,15 +1,21 @@
 import "../CSS/Skills.css";
 
-const skills = ["HTML5", "CSS3", "JavaScript (ES6)", "React", "REST API Integration", "C++", "Responsive Web Design", "Object-Oriented Programming (OOPs)", "DBMS", "PostgreSQL", "Git", "GitHub"];
+const skills = [
+  "React.js", "Node.js", "Express.js", "MongoDB", 
+  "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3",
+  "PostgreSQL", "REST API Design", "JWT Authentication",
+  "Git", "GitHub", "Object-Oriented Programming"
+];
 
 const Skills = () => {
     return (
         <section className="skills" id="skills">
-            <div className="skills-container">
-                <h2>Skills</h2>
-                <div className="skills-grid">
+            <div className="section-container">
+                <h2 className="section-title fade-in-up">My Skills</h2>
+                <div className="skills-grid fade-in-up delay-200">
                     {skills.map((skill, index) => (
-                        <div key={index} className="skill">
+                        <div key={index} className="skill-tag">
+                            <span className="skill-dot"></span>
                             {skill}
                         </div>
                     ))}
@@ -17,6 +23,6 @@ const Skills = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Skills;

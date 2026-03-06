@@ -1,38 +1,36 @@
+/* ---------------------------
+  ABOUT SECTION STYLES
+--------------------------- */
 .about {
-  padding: 80px 20px;
-  background: #f3f4f6;
-  text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
-.about-container {
+.about-content {
   max-width: 900px;
-  margin: auto;
-}
-
-.about-container h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-.about-container p {
-  color: #4b5563;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
+  margin: 0 auto;
+  padding: 3rem 4rem;
+  border-radius: var(--radius-lg);
   text-align: center;
 }
 
-/* Dark Mode */
-.app.dark .about {
-  background: #1f2937;
+.about-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
-.app.dark .about-container h2 {
-  color: #f3f4f6;
+.about-content p:last-child {
+  margin-bottom: 0;
 }
 
-.app.dark .about-container p {
-  color: #d1d5db;
+@media (max-width: 768px) {
+  .about-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .about-content p {
+    font-size: 1.05rem;
+  }
 }

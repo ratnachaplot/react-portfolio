@@ -18,15 +18,17 @@ function App() {
   };
 
   return (
-    <div className={darkMode ? "app dark" : "app"}>
+    <div className={`app ${darkMode ? "dark" : ""}`}>
       <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Contact />
+      <main className="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

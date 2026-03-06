@@ -77,10 +77,10 @@ const Navbar = ({toggleDarkMode, darkMode}) => {
                 <ul className={`nav-links ${isOpen ? "open" : ""}`}>
                     <li><a href="#home" onClick={handleNavClick}>Home</a></li>
                     <li><a href="#about" onClick={handleNavClick}>About</a></li>
-                    <li><a href="#education" onClick={handleNavClick}>Education</a></li>
-                    <li><a href="#experience" onClick={handleNavClick}>Experience</a></li>
-                    <li><a href="#projects" onClick={handleNavClick}>Projects</a></li>
                     <li><a href="#skills" onClick={handleNavClick}>Skills</a></li>
+                    <li><a href="#experience" onClick={handleNavClick}>Experience</a></li>
+                    <li><a href="#education" onClick={handleNavClick}>Education</a></li>
+                    <li><a href="#projects" onClick={handleNavClick}>Projects</a></li>
                     <li><a href="#contact" onClick={handleNavClick}>Contact</a></li>
                 </ul>
 

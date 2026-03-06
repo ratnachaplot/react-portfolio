@@ -2,7 +2,7 @@ import "../CSS/Education.css";
 
 const educationData = [
     {
-        degree: "B.Tech in Computer Science and Engineering",
+        degree: "B.Tech in Computer Science & Engineering",
         institution: "Geetanjali Institute of Technical Studies, Udaipur",
         duration: "2022 – Present",
         score: "CGPA: 9.0",
@@ -30,24 +30,22 @@ const educationData = [
 const Education = () => {
     return (
         <section className="education" id="education">
-            <div className="education-container">
-                <h2>Education</h2>
-                <p className="section-subtitle">My Academic Journey</p>
-                
-                <div className="education-timeline">
+            <div className="section-container">
+                <h2 className="section-title fade-in-up">Education</h2>
+                <div className="education-timeline fade-in-up delay-200">
                     {educationData.map((edu, index) => (
                         <div key={index} className={`education-item ${edu.status}`}>
                             <div className="timeline-marker">
                                 <span className="timeline-icon">{edu.icon}</span>
                             </div>
-                            <div className="education-content">
+                            <div className="education-content glass">
                                 <div className="education-header">
                                     <h3>{edu.degree}</h3>
                                     {edu.status === "ongoing" && (
                                         <span className="status-badge">Currently Pursuing</span>
                                     )}
                                 </div>
-                                <h4>{edu.institution}</h4>
+                                <h4 className="institution">{edu.institution}</h4>
                                 <div className="education-details">
                                     <span className="duration">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

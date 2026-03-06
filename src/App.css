@@ -1,86 +1,248 @@
 /* ---------------------------
+  GLOBAL SETTINGS & VARIABLES
+--------------------------- */
+:root {
+  /* Colors - Light Mode (Default) */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+  
+  /* Borders & Shadows */
+  --border-color: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --font-heading: 'Outfit', var(--font-sans);
+  
+  /* Layout & Transitions */
+  --nav-height: 80px;
+  --section-padding: 100px 0;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+}
+
+/* Colors - Dark Mode */
+.app.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #0b1120;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  
+  --accent-primary: #60a5fa;
+  --accent-secondary: #a78bfa;
+  --accent-glow: rgba(96, 165, 250, 0.3);
+  
+  --border-color: #334155;
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------
   GLOBAL STYLES
 --------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f3f4f6;
-  color: #111827;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
   line-height: 1.6;
-  scroll-behavior: smooth;
-  transition: all 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
 }
 
-/* Make sure sections have spacing from navbar */
-section {
-  padding-top: 80px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-/* Links default */
+p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
 a {
   text-decoration: none;
-  transition: all 0.2s ease;
+  color: var(--accent-primary);
+  transition: color var(--transition-short);
 }
 
-/* Buttons default */
+a:hover {
+  filter: brightness(1.2);
+}
+
 button {
-  font-family: inherit;
-  transition: all 0.3s ease;
+  font-family: var(--font-sans);
+  border: none;
+  background: none;
   cursor: pointer;
 }
 
-/* ---------------------------
-  DARK MODE
---------------------------- */
-.app.dark {
-  background-color: #1f2937;
-  color: #f3f4f6;
-}
-
-/* Override sections */
-.app.dark section {
-  background-color: #1f2937;
-  color: #f3f4f6;
-}
-
-/* Buttons in dark mode */
-.app.dark button {
-  color: #f3f4f6;
-}
-
-/* Links in dark mode */
-.app.dark a {
-  color: #3b82f6;
-}
-
-/* Inputs/Textarea in dark mode */
-.app.dark input,
-.app.dark textarea {
-  background-color: #374151;
-  color: #f3f4f6;
-  border: 1px solid #6b7280;
-}
-
-/* Smooth transition for sections & elements */
-section, button, input, textarea, a {
-  transition: all 0.3s ease;
+ul {
+  list-style: none;
 }
 
 /* ---------------------------
-  LAYOUT HELPERS
+  LAYOUT & UTILITIES
 --------------------------- */
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Optional: spacing between sections */
-section {
-  margin-bottom: 60px;
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
 }
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* Subtle background glowing orb effect */
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.app::before {
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--accent-primary);
+  opacity: 0.15;
+}
+
+.app::after {
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--accent-secondary);
+  opacity: 0.15;
+}
+
+.app.dark::before,
+.app.dark::after {
+  opacity: 0.08;
+}
+
+/* All sections need to sit above the glow */
+nav, section, footer {
+  z-index: 1;
+  position: relative;
+}
+
+/* Typography Utilities */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: var(--radius-full);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Form Elements */
+input, textarea {
+  font-family: var(--font-sans);
+}
+
+/* ---------------------------
+  ANIMATIONS
+--------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }

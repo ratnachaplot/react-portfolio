@@ -1,43 +1,54 @@
+/* ---------------------------
+  SKILLS SECTION STYLES
+--------------------------- */
 .skills {
-  padding: 80px 20px;
-  background: white;
-  text-align: center;
-}
-
-.skills-container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.skills-container h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #051539;
+  position: relative;
+  z-index: 10;
 }
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 1.25rem;
   justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.skill {
-  background: #dbeafe;
-  color: #1d4ed8;
-  padding: 8px 16px;
-  border-radius: 20px;
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-full);
   font-weight: 500;
+  font-size: 1.05rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-short), box-shadow var(--transition-short), border-color var(--transition-short);
+  cursor: default;
 }
 
-/* Dark Mode */
-.app.dark .skills {
-  background: #1f2937;
-  color: #f3f4f6;
+.skill-tag:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), 0 0 15px var(--accent-glow);
+  border-color: var(--accent-primary);
 }
 
-.app.dark .skill {
-  background: #01132f;
-  color: #f3f4f6;
+.skill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  display: inline-block;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+@media (max-width: 480px) {
+  .skill-tag {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+  }
 }

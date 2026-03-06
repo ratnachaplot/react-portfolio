@@ -5,18 +5,18 @@ const experienceData = [
         role: "Web Development Internship",
         company: "IBM SkillsBuild",
         location: "Remote",
-        duration: "June – August 2024",
-        description: "Led development of interactive web interfaces as part of a cross-functional team, leveraging HTML5, CSS3, and JavaScript to deliver pixel-perfect, user-centric designs. Demonstrated strong collaboration and code quality standards while contributing to multiple successful production projects.",
-        skills: ["HTML5", "CSS3", "JavaScript", "Team Collaboration", "UI/UX"],
+        duration: "July – August 2024",
+        description: "Collaborated on group projects building interactive web interfaces, strengthening team coding practices and modern development workflows.",
+        skills: ["Web Development", "Team Collaboration", "Frontend"],
         icon: "💼"
     },
     {
         role: "Web Development Internship",
         company: "Main Flow Services & Technologies",
         location: "Remote",
-        duration: "May – July 2024",
-        description: "Designed and developed responsive UI components using HTML5, CSS3, and JavaScript, focusing on modern frontend best practices. Mastered responsive design principles and enhanced problem-solving skills through hands-on individual projects in a collaborative remote environment.",
-        skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Problem Solving"],
+        duration: "May – June 2024",
+        description: "Built UI components using HTML, CSS, and JavaScript. Improved responsive design principles and self-learning skills through hands-on frontend development.",
+        skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
         icon: "🚀"
     }
 ];
@@ -24,17 +24,15 @@ const experienceData = [
 const Experience = () => {
     return (
         <section className="experience" id="experience">
-            <div className="experience-container">
-                <h2>Experience</h2>
-                <p className="section-subtitle">My Professional Journey</p>
-                
-                <div className="experience-timeline">
+            <div className="section-container">
+                <h2 className="section-title fade-in-up">Experience</h2>
+                <div className="experience-timeline fade-in-up delay-200">
                     {experienceData.map((exp, index) => (
                         <div key={index} className="experience-item">
                             <div className="timeline-marker">
                                 <span className="timeline-icon">{exp.icon}</span>
                             </div>
-                            <div className="experience-content">
+                            <div className="experience-content glass">
                                 <div className="experience-header">
                                     <div className="header-main">
                                         <h3>{exp.role}</h3>
@@ -63,7 +61,7 @@ const Experience = () => {
                                 
                                 <div className="skills-tags">
                                     {exp.skills.map((skill, idx) => (
-                                        <span key={idx} className="skill-tag">{skill}</span>
+                                        <span key={idx} className="skill-tag-small">{skill}</span>
                                     ))}
                                 </div>
                             </div>
